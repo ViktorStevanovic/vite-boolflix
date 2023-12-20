@@ -1,5 +1,5 @@
 <template lang="">
-    <h1>Main</h1>
+    <h1>Searched films</h1>
     <AppMovies/>
 </template>
 <script>
