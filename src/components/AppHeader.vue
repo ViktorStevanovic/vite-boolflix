@@ -1,9 +1,14 @@
 <template lang="">
-    <h1>Header</h1>
+    
+    <AppSearch/>
 </template>
 <script>
+import AppSearch from './AppSearch.vue';
 export default {
     name: 'AppHeader',
+    components:{
+        AppSearch,
+    },
 }
 </script>
 <style lang="scss" scoped>
