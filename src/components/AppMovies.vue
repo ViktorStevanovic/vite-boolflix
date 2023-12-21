@@ -49,8 +49,11 @@ export default {
             let raiting = '';
             for (let index = 0; index < this.store.moviesList.length; index++) {
                 let result = parseInt(vote / 2);            
-                raiting = Math.round(result);
-                // console.log(raiting)
+                result = Math.round(result);
+                console.log(result)
+            for (let index = 0; index < result; index++) {
+                raiting += "★"            
+            } 
                 return raiting             
             }
         }
