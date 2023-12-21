@@ -8,7 +8,7 @@
                 <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="">
                 <!-- <country-flag :country='movie.original_language'/> -->
                 <lang-flag :iso='movie.original_language'/>
-                <p>Feedback: {{movie.vote_average}}</p>      
+                <p>{{roundUp(movie.vote_average)}}</p>      
             </article>
         </div>
         <div class="series-wrapper">
@@ -20,7 +20,7 @@
 
                 <!-- <country-flag :country='movie.original_language'/> -->
                 <lang-flag :iso='serie.original_language'/>
-                <p>Feedback: {{serie.vote_average}}</p>      
+                <p>{{roundUp(serie.vote_average)}}</p>      
             </article>
         </div>
     </section>
@@ -30,7 +30,8 @@
 <script>
 import { store } from '../js/store.js';
 // import CountryFlag from '../../node_modules/vue-country-flag-next'
-import LangFlag from '../../node_modules/vue-lang-code-flags'
+import LangFlag from '../../node_modules/vue-lang-code-flags';
+
 
 export default {
     name: 'AppMovies',
@@ -41,15 +42,24 @@ export default {
         }
     },
     components: {
-                LangFlag
+        LangFlag
+    },
+    methods: {
+        roundUp(vote){
+            let raiting = '';
+            for (let index = 0; index < this.store.moviesList.length; index++) {
+                let result = parseInt(vote / 2);            
+                raiting = Math.round(result);
+                // console.log(raiting)
+                return raiting             
             }
+        }
+    },
 }
 </script>
 <style lang="scss" scoped>
    .movies-wrapper,.series-wrapper{
     width: 50%;
    }
-   img{
-    // width: 100%;
-   }
+ 
 </style>
