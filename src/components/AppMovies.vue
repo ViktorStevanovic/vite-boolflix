@@ -1,20 +1,23 @@
 <template lang="">
-    <section class="results-list d-flex">
+    <section class="results-list d-flex container text-center">
         <div class="movies-wrapper">
-            <h1>Films</h1>
+            <h1 class='mb-5'>Films</h1>
             <article v-for='movie in this.store.moviesList'>
-                <h1>Title: {{ movie.title}}</h1>
+                <h1>{{ movie.title}}</h1>
                 <p>Original title: {{movie.original_title}}</p>
+                <img :src="`https://image.tmdb.org/t/p/w500${movie.poster_path}`" alt="">
                 <!-- <country-flag :country='movie.original_language'/> -->
                 <lang-flag :iso='movie.original_language'/>
                 <p>Feedback: {{movie.vote_average}}</p>      
             </article>
         </div>
         <div class="series-wrapper">
-            <h1>TV series</h1>
+            <h1 class='mb-5'>TV series</h1>
             <article v-for='serie in this.store.seriesList'>
-                <h1>Title: {{ serie.name}}</h1>
+                <h1>{{ serie.name}}</h1>
                 <p>Original title: {{serie.original_name}}</p>
+                <img :src="`https://image.tmdb.org/t/p/w500${serie.poster_path}`" alt="">
+
                 <!-- <country-flag :country='movie.original_language'/> -->
                 <lang-flag :iso='serie.original_language'/>
                 <p>Feedback: {{serie.vote_average}}</p>      
@@ -43,5 +46,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-   
+   .movies-wrapper,.series-wrapper{
+    width: 50%;
+   }
+   img{
+    // width: 100%;
+   }
 </style>
