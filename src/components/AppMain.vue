@@ -1,5 +1,4 @@
 <template lang="">
-    <h1>Searched films</h1>
     <AppMovies/>
 </template>
 <script>
