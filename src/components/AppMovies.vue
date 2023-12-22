@@ -1,11 +1,12 @@
 <template lang="">
-    <section class="results-list d-flex container text-center">
-        <div class="movies-wrapper">
+    <section class="results-list container-fluid text-center">
+        <!-- Movie section -->
+        <div class="movies-wrapper d-flex gap-3">
             <h1 class='mb-5'>Films</h1>            
             <SingleMovie v-for='movie in this.store.moviesList' :movie='movie'/>
         </div>
-
-        <div class="series-wrapper">
+        <!-- TV Series section -->
+        <div class="series-wrapper d-flex">
             <h1 class='mb-5'>TV series</h1>
             <SingleSerie v-for='serie in this.store.seriesList' :serie='serie'/>
         </div>
@@ -17,9 +18,6 @@
 import { store } from '../js/store.js';
 import SingleMovie from './SingleMovie.vue';
 import SingleSerie from './SingleSerie.vue';
-// import CountryFlag from '../../node_modules/vue-country-flag-next'
-// import LangFlag from '../../node_modules/vue-lang-code-flags';
-
 
 export default {
     name: 'AppMovies',
@@ -38,10 +36,19 @@ export default {
 </script>
 <style lang="scss" scoped>
    .movies-wrapper,.series-wrapper{
-    width: 50%;
+    overflow: scroll;
+    white-space: nowrap;
+    height: 50%;
+    // -ms-overflow-style: none;
+    // scrollbar-width: none;
    }
-   img{
-    width: 500px;
+//    .movies-wrapper::-webkit-scrollbar{
+//     display: none;
+    
+//    }
+
+   section{
+    height: calc(100vh - 56px);
    }
  
 </style>
