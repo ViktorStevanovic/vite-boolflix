@@ -2,8 +2,8 @@
     <nav class="navbar bg-body-tertiary">
         <div class="container">
             <a class="navbar-brand">Boolflix</a>
-            <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" v-model="movieName" @keyup.enter='changeMovie'>
+            <form class="d-flex" role="search" v-on:submit.prevent>
+            <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" v-model="movieName" v-on:keyup.enter='changeMovie'>
             <button class="btn btn-outline-danger" type="button" @click='changeMovie'>Search</button>
             </form>
         </div>
