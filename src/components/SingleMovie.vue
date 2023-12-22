@@ -5,8 +5,10 @@
         </div>
         <div class="movie-info flex-column justify-content-end align-items-center gap-2">
             <h1 class="text-wrap">{{ movie.title}}</h1>
-            <p class="text-wrap"><strong>Original title:</strong> {{movie.original_title}}</p>    
+            <p class="text-wrap"><strong>Original title:</strong> {{movie.original_title}}</p>   
+            <span>Original language:</span> 
             <lang-flag :iso='movie.original_language'/>
+            <span>Average raiting:</span>
             <p>{{roundUp(movie.vote_average)}}</p>      
         </div>
     </article>
@@ -75,13 +77,16 @@ export default {
         .movie-info{
             height: 100%;
             width: 100%;
+            padding: 1rem;
             position: absolute;
             bottom: 0;
             color: white;
             z-index: 1;
             display: none;
             h1{
-                font-size: 1rem;
+                font-size: 1.5rem;
+                margin-bottom: auto;
+                margin-top: 1.5rem;
             }
 
         }

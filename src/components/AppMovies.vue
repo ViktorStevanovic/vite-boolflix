@@ -49,6 +49,7 @@ export default {
 
    section{
     height: calc(100vh - 56px);
+    background-color: #202529;
    }
  
 </style>

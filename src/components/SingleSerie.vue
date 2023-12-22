@@ -6,7 +6,9 @@
         <div class="serie-info flex-column justify-content-end align-items-center gap-2">
             <h1 class="text-wrap">{{ serie.name}}</h1>
             <p class="text-wrap">Original title: {{serie.original_name}}</p>
+            <span>Original language:</span>
             <lang-flag :iso='serie.original_language'/>
+            <span>Average raiting:</span>
             <p>{{roundUp(serie.vote_average)}}</p>      
         </div>
     </article>
@@ -74,13 +76,16 @@ export default {
         .serie-info{
             height: 100%;
             width: 100%;
+            padding: 1rem;
             position: absolute;
             bottom: 0;
             color: white;
             z-index: 1;
             display: none;
             h1{
-                font-size: 1rem;
+                font-size: 1.5rem;
+                margin-bottom: auto;
+                margin-top: 1.5rem;
             }
 
         }

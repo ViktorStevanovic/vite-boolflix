@@ -1,9 +1,9 @@
 <template lang="">
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand">Boolflix</a>
+            <a class="navbar-brand text-danger">Boolflix</a>
             <form class="d-flex" role="search" v-on:submit.prevent>
-            <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" v-model="movieName" v-on:keyup.enter='changeMovie'>
+            <input class="form-control me-2" type="text" placeholder="Boolflix" aria-label="Search" v-model="movieName" v-on:keyup.enter='changeMovie'>
             <button class="btn btn-outline-danger" type="button" @click='changeMovie'>Search</button>
             </form>
         </div>
@@ -57,5 +57,5 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-    
+
 </style>
