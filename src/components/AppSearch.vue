@@ -1,6 +1,6 @@
 <template lang="">
     <nav class="navbar bg-body-tertiary">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand">Boolflix</a>
             <form class="d-flex" role="search" v-on:submit.prevent>
             <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" v-model="movieName" v-on:keyup.enter='changeMovie'>
